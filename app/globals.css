@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.background-sign {
+  width: clamp(15.625rem, 83.893vw - 38.171rem, 62.5rem);
+}
