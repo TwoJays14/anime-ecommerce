@@ -1,5 +1,6 @@
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { DefaultProfilePic } from '../assets';
 
 export const LoggedInImage = () => {
   const { data: session } = useSession();

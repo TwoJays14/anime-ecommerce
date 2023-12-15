@@ -6,6 +6,7 @@ const nextConfig = {
       'platform-lookaside.fbsbx.com',
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
+      'banner2.cleanpng.com',
     ],
     loader: 'default',
   },

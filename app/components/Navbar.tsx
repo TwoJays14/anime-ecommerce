@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BsFacebook,
   BsInstagram,
@@ -44,6 +44,11 @@ export const Navbar = () => {
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    setIsAnimated(true); // Enable animations once the component has mounted
+  }, []);
 
   const iconStyle = {
     width: '25px',
@@ -58,7 +63,7 @@ export const Navbar = () => {
           <motion.nav
             variants={headerVariants}
             initial="initial"
-            animate="animate"
+            animate={isAnimated && 'animate'}
             exit="exit"
             className="hidden sm:flex space-x-3 max-w-[500px] justify-center  mx-auto relative"
           >
@@ -113,7 +118,7 @@ export const Navbar = () => {
             </label>
           </div>
           <div className="absolute right-5 sm:hidden">
-            {session?.user && <LoggedInImage />}
+            {session?.user ? <LoggedInImage /> : ''}
           </div>
         </div>
         <div className="drawer-side">

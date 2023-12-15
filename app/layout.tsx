@@ -21,7 +21,7 @@ export default function RootLayout({
       <Provider>
         <body
           data-theme="dim"
-          className={`${inter.className}, h-screen w-screen relative flex flex-col justify-center `}
+          className={`${inter.className} h-screen w-screen relative flex flex-col justify-center `}
         >
           <Navbar />
           {children}

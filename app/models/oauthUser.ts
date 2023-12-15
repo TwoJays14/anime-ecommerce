@@ -19,6 +19,6 @@ const userSchema = new Schema({
   },
 });
 
-const User = models.User || model('User', userSchema); // checks if model exists before creating it to avoid OverwriteModelError
+const User = models.OAuthUser || model('OAuthUser', userSchema); // checks if model exists before creating it to avoid OverwriteModelError
 
 export default User;
