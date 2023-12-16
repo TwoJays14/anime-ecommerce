@@ -7,6 +7,7 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
       'banner2.cleanpng.com',
+      'shikimori.one',
     ],
     loader: 'default',
   },

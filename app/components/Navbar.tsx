@@ -11,6 +11,7 @@ import {
   BsTwitter,
 } from 'react-icons/bs';
 import { LoggedInImage } from './LoggedInImage';
+import { AniamtePresence, MotionDiv, MotionNav } from './Motion';
 
 const navVariants = {
   initial: { width: 0 },
@@ -60,7 +61,7 @@ export const Navbar = () => {
     <header className="w-full sm:flex items-center mx-auto h-16 text-white absolute z-10 top-5 left-1/2 transform -translate-x-1/2">
       <AnimatePresence>
         {!isOpen ? (
-          <motion.nav
+          <MotionNav
             variants={headerVariants}
             initial="initial"
             animate={isAnimated && 'animate'}
@@ -85,7 +86,7 @@ export const Navbar = () => {
             <div className="glass rounded-full p-5 cursor-pointer hover:scale-110 transition-all ">
               <BsInstagram style={iconStyle} />
             </div>
-          </motion.nav>
+          </MotionNav>
         ) : (
           <motion.nav
             variants={navVariants}

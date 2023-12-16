@@ -104,7 +104,7 @@ export const options: NextAuthOptions = {
             await User.create({
               email: profile?.email,
               username: profile?.name?.replace(' ', '').toLowerCase(),
-              picture: profile?.picture || profile?.avatar_url,
+              picture: profile?.picture || profile?.image,
             });
           }
           return true; // Sign-in successful

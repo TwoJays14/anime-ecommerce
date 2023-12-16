@@ -19,10 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Provider>
-        <body
-          data-theme="dim"
-          className={`${inter.className} h-screen w-screen relative flex flex-col justify-center `}
-        >
+        <body data-theme="dim" className={`${inter.className}  `}>
           <Navbar />
           {children}
         </body>
