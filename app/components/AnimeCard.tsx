@@ -31,13 +31,17 @@ const AnimeCard = ({ anime, index, onClick }: Prop) => {
   const [animeDetails, setAnimeDetails] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   // console.log(animeDetails);
- 
+
   return (
     <MotionDiv
       variants={variants}
       initial="hidden"
       animate="visible"
-      transition={{ delay: index * 0.25, ease: 'easeInOut', duration: 0.5 }}
+      transition={{
+        delay: index * 0.1,
+        ease: 'easeInOut',
+        duration: 0.5,
+      }}
       viewport={{ amount: 0 }}
       className="w-full rounded relative cursor-pointer hover:scale-105 transition-all"
       onClick={onClick}

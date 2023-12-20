@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import AnimeCard from '../components/AnimeCard';
 import AnimeModal from '../components/AnimeModal';
 import { fetchAnime } from '../action';
+import LoadMore from '../components/LoadMore';
 
 const ProductsPage = () => {
   const [animes, setAnimes] = useState([]); // State for list of animes
@@ -22,23 +23,33 @@ const ProductsPage = () => {
     setModalOpen(true);
   };
 
-  console.log('selectedAnime', selectedAnime)
-  
+  console.log('selectedAnime', selectedAnime);
 
   return (
-    <section className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  justify-items-center gap-4 pt-48 md:max-w-[1500px] mx-auto">
-      {animes.map((anime, index) => (
-        <AnimeCard
-          key={anime.id}
-          anime={anime}
-          index={index}
-          onClick={() => handleAnimeClick(anime)}
-        />
-      ))}
-      {modalOpen && selectedAnime && (
-        <AnimeModal anime={selectedAnime} onClose={() => setModalOpen(false)} />
-      )}
-    </section>
+    <>
+      <main className="flex flex-col ">
+        <section className="grid lg:grid-cols-4  sm:grid-cols-2 grid-cols-1 justify-items-center gap-4 pt-48 md:max-w-[1500px] mx-auto">
+          {animes.map((anime, index) => (
+            <AnimeCard
+              key={anime.id}
+              anime={anime}
+              index={index}
+              onClick={() => handleAnimeClick(anime)}
+            />
+          ))}
+          {/* Include LoadMore in the grid and make it span all columns */}
+
+          <LoadMore handleAnimeClick={handleAnimeClick} />
+        </section>
+
+        {modalOpen && selectedAnime && (
+          <AnimeModal
+            anime={selectedAnime}
+            onClose={() => setModalOpen(false)}
+          />
+        )}
+      </main>
+    </>
   );
 };
 export default ProductsPage;

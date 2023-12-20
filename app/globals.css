@@ -5,3 +5,9 @@
 .background-sign {
   width: clamp(15.625rem, 83.893vw - 38.171rem, 62.5rem);
 }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 4rem;
+}
