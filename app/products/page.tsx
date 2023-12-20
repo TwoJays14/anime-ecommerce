@@ -22,6 +22,9 @@ const ProductsPage = () => {
     setModalOpen(true);
   };
 
+  console.log('selectedAnime', selectedAnime)
+  
+
   return (
     <section className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  justify-items-center gap-4 pt-48 md:max-w-[1500px] mx-auto">
       {animes.map((anime, index) => (
