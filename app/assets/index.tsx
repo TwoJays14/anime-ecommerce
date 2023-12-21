@@ -16,3 +16,23 @@ export const DefaultProfilePic = () => {
     </svg>
   );
 };
+
+export const ShoppingCartIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path d="M4 4l2 9h12l2-9H4z" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M7 15h10M11 7l2-2 2 2M7 7l2-2 2 2"
+      />
+    </svg>
+  );
+};

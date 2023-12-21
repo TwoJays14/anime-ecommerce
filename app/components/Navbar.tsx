@@ -12,6 +12,7 @@ import {
 } from 'react-icons/bs';
 import { LoggedInImage } from './LoggedInImage';
 import { AniamtePresence, MotionDiv, MotionNav } from './Motion';
+import { ShoppingCart } from './ShoppingCart';
 
 const navVariants = {
   initial: { width: 0 },
@@ -142,6 +143,9 @@ export const Navbar = () => {
         </div>
       </div>
 
+      <div className="absolute right-20 z-20">
+        <ShoppingCart />
+      </div>
       <div className="absolute right-5 hidden sm:block">
         <LoggedInImage />
       </div>
